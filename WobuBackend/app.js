@@ -61,7 +61,24 @@ app.use(function (err, req, res, next) {
 
 var PROTO_PATH = __dirname + '../WobuServices/protos/Everything.proto';
 var grpc = require('grpc');
+var protoLoader = require('@grpc/proto-loader');
+// Suggested options for similarity to existing grpc.load behavior
+var packageDefinition = protoLoader.loadSync(
+    PROTO_PATH,
+    {
+        keepCase: true,
+        longs: String,
+        enums: String,
+        defaults: true,
+        oneofs: true
+    });
+var protoDescriptor = grpc.loadPackageDefinition(packageDefinition);
+//The protoDescriptor object has the full package hierarchy
+var routeguide = protoDescriptor.routeguide;
+//Once you’ve done this, the stub constructor is in the routeguide namespace (protoDescriptor.routeguide.RouteGuide) and the service descriptor (which is used to create a server) is a property of the stub (protoDescriptor.routeguide.RouteGuide.service);
 
+//https://grpc.io/docs/tutorials/basic/node.html#loading-service-descriptors-from-proto-files
+//stopping prematurely
 
 
 
