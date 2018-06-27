@@ -5,22 +5,20 @@ import "google/protobuf/timestamp.proto";
 
 service Everything {
 
-	rpc GetWorkoutsAll (.google.protobuf.Empty) returns ();	//i suppose user is already known on server...hmm... //todo: an implementation detail to choose
+	//repeated vs. stream experiment
+	rpc GetExecisesOf_R (Exercise.Type) returns (RepeatedExercises);
+	rpc GetExecisesOf_S (Exercise.Type) returns (stream Exercise);
 
-	rpc GetWorkoutsOf (Exercise.Type) returns ()
+	rpc StartWorkout (.google.protobuf.Empty) returns (Workout); //returns initial workout, with only start time.
 
-	rpc StartWorkout (); //??? 
+	rpc StopWorkout (.google.protobuf.Empty) returns (Workout); //returns the current workout, including stop time.
 
 	//The repeated field approach is akin to batching, and requires all of the messages to be prepared by the server before any are sent, and the entire set of messages to be received by the client before doing any processing, increasing latency
 
-	//one was stream reply
-
-	// one was repeated reply
-
 	//have default upToTime //todo: consider encoding this meaning via a message instead of a comment...
-	rpc GetHistoryRecent(.google.protobuf.Timestamp) returns (RepeatedExercises); //let this come in batches, will consume for drawing graphs of determinate size.
+	rpc GetExerciseHistoryRecent(.google.protobuf.Timestamp) returns (RepeatedExercises); //let this come in batches, will consume for drawing graphs of determinate size.
 
-	rpc GetHistoryAll(Exercise.Type) returns (stream Exercise); //let this be streaming, let it keep causing scrolling
+	rpc GetExerciseHistoryAll(Exercise.Type) returns (stream Exercise); //let this be streaming, let it keep causing scrolling
 
 }
 
@@ -83,7 +81,6 @@ message Rep {
 
 	UnitsMassType units = 3;
 	
-
 }
 
 enum ExerciseType {
