@@ -8,28 +8,56 @@ service Everything {
 
 }
 
-// a Workout session has multiple Exercises done within it. 
+// ~~~ a Workout session has multiple Exercises done within it. ~~ i mean... from a data MODELLING perspective... but in terms messages...nah?
 // can be used to track starting time when opening app at gym arrival for example
+// used to simply register it is simply active, so that a buddy can join in while one perons's is active.
 message Workout {
 
 	//required int32 userId
-	
 
+	User who = 1;
 
+	WorkoutState state = 2;
 
 }
 
-// an Exercise instance
+enum WorkoutState {
+
+	START = 0;
+	STOP = 1;
+	RESTART = 2;
+
+}
+
+// an Exercise instance, composed of multiple sets
 message Exercise {
 
 	string name = 1;
 	
 	ExerciseType type = 2;
 
-	//sets
-	//reps
+	Set set = 3;
 
 	string note = 10;
+
+}
+
+//todo: decide a guid stategy. roughly, i want individual reps to be reconstructable in order without sets. ditto up a level of abstraction... tbd how.
+message Set {
+
+	repeated Rep rep = 1;
+
+}
+
+message Rep {
+
+	int32 amount = 1;
+
+	// named as used in the convential sense, but his really means mass not weight technically.
+	int32 weight = 2;
+
+	UnitsMassType units = 3;
+	
 
 }
 
@@ -40,6 +68,16 @@ enum ExerciseType {
 	STRECTH = 2;
 
 }
+
+enum UnitsMassType {
+
+	option allow_alias = true;
+	LBS = 0;
+	POUNDS = 0;
+	KG = 1;
+	KILOGRAMS = 1;
+
+} 
 
 
 // for authentication... todo: investigate possibly replace grpc message User with superior authentication later? 
