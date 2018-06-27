@@ -58,6 +58,13 @@ app.use(function (err, req, res, next) {
     });
 });
 
+
+var PROTO_PATH = __dirname + '../WobuServices/protos/Everything.proto';
+var grpc = require('grpc');
+
+
+
+
 app.set('port', process.env.PORT || 3000);
 
 var server = app.listen(app.get('port'), function () {
