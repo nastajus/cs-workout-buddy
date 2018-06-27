@@ -7,54 +7,54 @@
 
 using grpc = global::Grpc.Core;
 
-namespace  {
+namespace Wobu.Everything {
   public static partial class Everything
   {
-    static readonly string __ServiceName = "Everything";
+    static readonly string __ServiceName = "Wobu.Everything.Everything";
 
-    static readonly grpc::Marshaller<global::Exercise.Types.Type> __Marshaller_Type = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Exercise.Types.Type.Parser.ParseFrom);
-    static readonly grpc::Marshaller<global::RepeatedExercises> __Marshaller_RepeatedExercises = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::RepeatedExercises.Parser.ParseFrom);
-    static readonly grpc::Marshaller<global::Exercise> __Marshaller_Exercise = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Exercise.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::Wobu.Everything.Exercise.Types.Type> __Marshaller_Type = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Wobu.Everything.Exercise.Types.Type.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::Wobu.Everything.RepeatedExercises> __Marshaller_RepeatedExercises = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Wobu.Everything.RepeatedExercises.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::Wobu.Everything.Exercise> __Marshaller_Exercise = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Wobu.Everything.Exercise.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::Google.Protobuf.WellKnownTypes.Empty> __Marshaller_Empty = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Google.Protobuf.WellKnownTypes.Empty.Parser.ParseFrom);
-    static readonly grpc::Marshaller<global::Workout> __Marshaller_Workout = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Workout.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::Wobu.Everything.Workout> __Marshaller_Workout = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Wobu.Everything.Workout.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::Google.Protobuf.WellKnownTypes.Timestamp> __Marshaller_Timestamp = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Google.Protobuf.WellKnownTypes.Timestamp.Parser.ParseFrom);
 
-    static readonly grpc::Method<global::Exercise.Types.Type, global::RepeatedExercises> __Method_GetExecisesOf_R = new grpc::Method<global::Exercise.Types.Type, global::RepeatedExercises>(
+    static readonly grpc::Method<global::Wobu.Everything.Exercise.Types.Type, global::Wobu.Everything.RepeatedExercises> __Method_GetExecisesOf_R = new grpc::Method<global::Wobu.Everything.Exercise.Types.Type, global::Wobu.Everything.RepeatedExercises>(
         grpc::MethodType.Unary,
         __ServiceName,
         "GetExecisesOf_R",
         __Marshaller_Type,
         __Marshaller_RepeatedExercises);
 
-    static readonly grpc::Method<global::Exercise.Types.Type, global::Exercise> __Method_GetExecisesOf_S = new grpc::Method<global::Exercise.Types.Type, global::Exercise>(
+    static readonly grpc::Method<global::Wobu.Everything.Exercise.Types.Type, global::Wobu.Everything.Exercise> __Method_GetExecisesOf_S = new grpc::Method<global::Wobu.Everything.Exercise.Types.Type, global::Wobu.Everything.Exercise>(
         grpc::MethodType.ServerStreaming,
         __ServiceName,
         "GetExecisesOf_S",
         __Marshaller_Type,
         __Marshaller_Exercise);
 
-    static readonly grpc::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::Workout> __Method_StartWorkout = new grpc::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::Workout>(
+    static readonly grpc::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::Wobu.Everything.Workout> __Method_StartWorkout = new grpc::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::Wobu.Everything.Workout>(
         grpc::MethodType.Unary,
         __ServiceName,
         "StartWorkout",
         __Marshaller_Empty,
         __Marshaller_Workout);
 
-    static readonly grpc::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::Workout> __Method_StopWorkout = new grpc::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::Workout>(
+    static readonly grpc::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::Wobu.Everything.Workout> __Method_StopWorkout = new grpc::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::Wobu.Everything.Workout>(
         grpc::MethodType.Unary,
         __ServiceName,
         "StopWorkout",
         __Marshaller_Empty,
         __Marshaller_Workout);
 
-    static readonly grpc::Method<global::Google.Protobuf.WellKnownTypes.Timestamp, global::RepeatedExercises> __Method_GetExerciseHistoryRecent = new grpc::Method<global::Google.Protobuf.WellKnownTypes.Timestamp, global::RepeatedExercises>(
+    static readonly grpc::Method<global::Google.Protobuf.WellKnownTypes.Timestamp, global::Wobu.Everything.RepeatedExercises> __Method_GetExerciseHistoryRecent = new grpc::Method<global::Google.Protobuf.WellKnownTypes.Timestamp, global::Wobu.Everything.RepeatedExercises>(
         grpc::MethodType.Unary,
         __ServiceName,
         "GetExerciseHistoryRecent",
         __Marshaller_Timestamp,
         __Marshaller_RepeatedExercises);
 
-    static readonly grpc::Method<global::Exercise.Types.Type, global::Exercise> __Method_GetExerciseHistoryAll = new grpc::Method<global::Exercise.Types.Type, global::Exercise>(
+    static readonly grpc::Method<global::Wobu.Everything.Exercise.Types.Type, global::Wobu.Everything.Exercise> __Method_GetExerciseHistoryAll = new grpc::Method<global::Wobu.Everything.Exercise.Types.Type, global::Wobu.Everything.Exercise>(
         grpc::MethodType.ServerStreaming,
         __ServiceName,
         "GetExerciseHistoryAll",
@@ -64,7 +64,7 @@ namespace  {
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
     {
-      get { return global::EverythingReflection.Descriptor.Services[0]; }
+      get { return global::Wobu.Everything.EverythingReflection.Descriptor.Services[0]; }
     }
 
     /// <summary>Base class for server-side implementations of Everything</summary>
@@ -76,12 +76,12 @@ namespace  {
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
-      public virtual global::System.Threading.Tasks.Task<global::RepeatedExercises> GetExecisesOf_R(global::Exercise.Types.Type request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::Wobu.Everything.RepeatedExercises> GetExecisesOf_R(global::Wobu.Everything.Exercise.Types.Type request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
-      public virtual global::System.Threading.Tasks.Task GetExecisesOf_S(global::Exercise.Types.Type request, grpc::IServerStreamWriter<global::Exercise> responseStream, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task GetExecisesOf_S(global::Wobu.Everything.Exercise.Types.Type request, grpc::IServerStreamWriter<global::Wobu.Everything.Exercise> responseStream, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -92,7 +92,7 @@ namespace  {
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
-      public virtual global::System.Threading.Tasks.Task<global::Workout> StartWorkout(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::Wobu.Everything.Workout> StartWorkout(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -103,7 +103,7 @@ namespace  {
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
-      public virtual global::System.Threading.Tasks.Task<global::Workout> StopWorkout(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::Wobu.Everything.Workout> StopWorkout(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -114,7 +114,7 @@ namespace  {
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
-      public virtual global::System.Threading.Tasks.Task<global::RepeatedExercises> GetExerciseHistoryRecent(global::Google.Protobuf.WellKnownTypes.Timestamp request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::Wobu.Everything.RepeatedExercises> GetExerciseHistoryRecent(global::Google.Protobuf.WellKnownTypes.Timestamp request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -126,7 +126,7 @@ namespace  {
       /// <param name="responseStream">Used for sending responses back to the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
       /// <returns>A task indicating completion of the handler.</returns>
-      public virtual global::System.Threading.Tasks.Task GetExerciseHistoryAll(global::Exercise.Types.Type request, grpc::IServerStreamWriter<global::Exercise> responseStream, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task GetExerciseHistoryAll(global::Wobu.Everything.Exercise.Types.Type request, grpc::IServerStreamWriter<global::Wobu.Everything.Exercise> responseStream, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -164,7 +164,7 @@ namespace  {
       /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The response received from the server.</returns>
-      public virtual global::RepeatedExercises GetExecisesOf_R(global::Exercise.Types.Type request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::Wobu.Everything.RepeatedExercises GetExecisesOf_R(global::Wobu.Everything.Exercise.Types.Type request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return GetExecisesOf_R(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -174,7 +174,7 @@ namespace  {
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
       /// <returns>The response received from the server.</returns>
-      public virtual global::RepeatedExercises GetExecisesOf_R(global::Exercise.Types.Type request, grpc::CallOptions options)
+      public virtual global::Wobu.Everything.RepeatedExercises GetExecisesOf_R(global::Wobu.Everything.Exercise.Types.Type request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_GetExecisesOf_R, null, options, request);
       }
@@ -186,7 +186,7 @@ namespace  {
       /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The call object.</returns>
-      public virtual grpc::AsyncUnaryCall<global::RepeatedExercises> GetExecisesOf_RAsync(global::Exercise.Types.Type request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::Wobu.Everything.RepeatedExercises> GetExecisesOf_RAsync(global::Wobu.Everything.Exercise.Types.Type request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return GetExecisesOf_RAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -196,15 +196,15 @@ namespace  {
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
       /// <returns>The call object.</returns>
-      public virtual grpc::AsyncUnaryCall<global::RepeatedExercises> GetExecisesOf_RAsync(global::Exercise.Types.Type request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::Wobu.Everything.RepeatedExercises> GetExecisesOf_RAsync(global::Wobu.Everything.Exercise.Types.Type request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_GetExecisesOf_R, null, options, request);
       }
-      public virtual grpc::AsyncServerStreamingCall<global::Exercise> GetExecisesOf_S(global::Exercise.Types.Type request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncServerStreamingCall<global::Wobu.Everything.Exercise> GetExecisesOf_S(global::Wobu.Everything.Exercise.Types.Type request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return GetExecisesOf_S(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-      public virtual grpc::AsyncServerStreamingCall<global::Exercise> GetExecisesOf_S(global::Exercise.Types.Type request, grpc::CallOptions options)
+      public virtual grpc::AsyncServerStreamingCall<global::Wobu.Everything.Exercise> GetExecisesOf_S(global::Wobu.Everything.Exercise.Types.Type request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncServerStreamingCall(__Method_GetExecisesOf_S, null, options, request);
       }
@@ -216,7 +216,7 @@ namespace  {
       /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The response received from the server.</returns>
-      public virtual global::Workout StartWorkout(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::Wobu.Everything.Workout StartWorkout(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return StartWorkout(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -226,7 +226,7 @@ namespace  {
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
       /// <returns>The response received from the server.</returns>
-      public virtual global::Workout StartWorkout(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::CallOptions options)
+      public virtual global::Wobu.Everything.Workout StartWorkout(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_StartWorkout, null, options, request);
       }
@@ -238,7 +238,7 @@ namespace  {
       /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The call object.</returns>
-      public virtual grpc::AsyncUnaryCall<global::Workout> StartWorkoutAsync(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::Wobu.Everything.Workout> StartWorkoutAsync(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return StartWorkoutAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -248,7 +248,7 @@ namespace  {
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
       /// <returns>The call object.</returns>
-      public virtual grpc::AsyncUnaryCall<global::Workout> StartWorkoutAsync(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::Wobu.Everything.Workout> StartWorkoutAsync(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_StartWorkout, null, options, request);
       }
@@ -260,7 +260,7 @@ namespace  {
       /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The response received from the server.</returns>
-      public virtual global::Workout StopWorkout(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::Wobu.Everything.Workout StopWorkout(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return StopWorkout(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -270,7 +270,7 @@ namespace  {
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
       /// <returns>The response received from the server.</returns>
-      public virtual global::Workout StopWorkout(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::CallOptions options)
+      public virtual global::Wobu.Everything.Workout StopWorkout(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_StopWorkout, null, options, request);
       }
@@ -282,7 +282,7 @@ namespace  {
       /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The call object.</returns>
-      public virtual grpc::AsyncUnaryCall<global::Workout> StopWorkoutAsync(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::Wobu.Everything.Workout> StopWorkoutAsync(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return StopWorkoutAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -292,7 +292,7 @@ namespace  {
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
       /// <returns>The call object.</returns>
-      public virtual grpc::AsyncUnaryCall<global::Workout> StopWorkoutAsync(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::Wobu.Everything.Workout> StopWorkoutAsync(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_StopWorkout, null, options, request);
       }
@@ -304,7 +304,7 @@ namespace  {
       /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The response received from the server.</returns>
-      public virtual global::RepeatedExercises GetExerciseHistoryRecent(global::Google.Protobuf.WellKnownTypes.Timestamp request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::Wobu.Everything.RepeatedExercises GetExerciseHistoryRecent(global::Google.Protobuf.WellKnownTypes.Timestamp request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return GetExerciseHistoryRecent(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -314,7 +314,7 @@ namespace  {
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
       /// <returns>The response received from the server.</returns>
-      public virtual global::RepeatedExercises GetExerciseHistoryRecent(global::Google.Protobuf.WellKnownTypes.Timestamp request, grpc::CallOptions options)
+      public virtual global::Wobu.Everything.RepeatedExercises GetExerciseHistoryRecent(global::Google.Protobuf.WellKnownTypes.Timestamp request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_GetExerciseHistoryRecent, null, options, request);
       }
@@ -326,7 +326,7 @@ namespace  {
       /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The call object.</returns>
-      public virtual grpc::AsyncUnaryCall<global::RepeatedExercises> GetExerciseHistoryRecentAsync(global::Google.Protobuf.WellKnownTypes.Timestamp request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::Wobu.Everything.RepeatedExercises> GetExerciseHistoryRecentAsync(global::Google.Protobuf.WellKnownTypes.Timestamp request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return GetExerciseHistoryRecentAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -336,7 +336,7 @@ namespace  {
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
       /// <returns>The call object.</returns>
-      public virtual grpc::AsyncUnaryCall<global::RepeatedExercises> GetExerciseHistoryRecentAsync(global::Google.Protobuf.WellKnownTypes.Timestamp request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::Wobu.Everything.RepeatedExercises> GetExerciseHistoryRecentAsync(global::Google.Protobuf.WellKnownTypes.Timestamp request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_GetExerciseHistoryRecent, null, options, request);
       }
@@ -348,7 +348,7 @@ namespace  {
       /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The call object.</returns>
-      public virtual grpc::AsyncServerStreamingCall<global::Exercise> GetExerciseHistoryAll(global::Exercise.Types.Type request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncServerStreamingCall<global::Wobu.Everything.Exercise> GetExerciseHistoryAll(global::Wobu.Everything.Exercise.Types.Type request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return GetExerciseHistoryAll(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -358,7 +358,7 @@ namespace  {
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
       /// <returns>The call object.</returns>
-      public virtual grpc::AsyncServerStreamingCall<global::Exercise> GetExerciseHistoryAll(global::Exercise.Types.Type request, grpc::CallOptions options)
+      public virtual grpc::AsyncServerStreamingCall<global::Wobu.Everything.Exercise> GetExerciseHistoryAll(global::Wobu.Everything.Exercise.Types.Type request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncServerStreamingCall(__Method_GetExerciseHistoryAll, null, options, request);
       }
