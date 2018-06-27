@@ -1,0 +1,21 @@
+﻿service Everything {
+
+	rpc GetWorkouts () returns ()
+
+}
+
+message Workout {
+
+	//required int32 userId
+	
+	required string name = 1;
+
+	optional string note = 2;
+
+}
+
+message User  {
+
+	string username = 1;
+
+}
