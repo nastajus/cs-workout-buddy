@@ -1,4 +1,8 @@
-﻿service Everything {
+﻿syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+service Everything {
 
 	rpc GetWorkouts () returns ()
 
@@ -18,14 +22,14 @@ message Workout {
 // an Exercise instance
 message Exercise {
 
-	required string name = 1;
+	string name = 1;
 	
-	optional ExerciseType type = 2;
+	ExerciseType type = 2;
 
 	//sets
 	//reps
 
-	optional string note = 10;
+	string note = 10;
 
 }
 
