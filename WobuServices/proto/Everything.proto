@@ -19,8 +19,7 @@ service Everything {
 
 	rpc GetHistoryRecent() returns ( );	//perhaps have default upToTime?...?
 
-	//todo: does it make sense to use the same return type as was used to call? I *think* so, but hold reserved doubts. TBD via implementing safely/sanely.
-	rpc GetHistoryAll(Exercise) returns (stream Exercise); //let this be streaming, let it keep causing scrolling		
+	rpc GetHistoryAll(Exercise.Type) returns (stream Exercise); //let this be streaming, let it keep causing scrolling		
 
 }
 
