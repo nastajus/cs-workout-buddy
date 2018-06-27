@@ -8,8 +8,8 @@ package Wobu.Everything;
 service Everything {
 
 	//repeated vs. stream experiment
-	rpc GetExecisesOf_R (Exercise.Type) returns (RepeatedExercises);
-	rpc GetExecisesOf_S (Exercise.Type) returns (stream Exercise);
+	rpc GetExercisesOf_R (Exercise) returns (RepeatedExercises);
+	rpc GetExercisesOf_S (Exercise) returns (stream Exercise);
 
 	rpc StartWorkout (.google.protobuf.Empty) returns (Workout); //returns initial workout, with only start time.
 
@@ -20,7 +20,7 @@ service Everything {
 	//have default upToTime //todo: consider encoding this meaning via a message instead of a comment...
 	rpc GetExerciseHistoryRecent(.google.protobuf.Timestamp) returns (RepeatedExercises); //let this come in batches, will consume for drawing graphs of determinate size.
 
-	rpc GetExerciseHistoryAll(Exercise.Type) returns (stream Exercise); //let this be streaming, let it keep causing scrolling
+	rpc GetExerciseHistoryAll(Exercise) returns (stream Exercise); //let this be streaming, let it keep causing scrolling
 
 }
 
@@ -48,15 +48,11 @@ enum WorkoutState {
 // an Exercise instance, composed of multiple sets
 message Exercise {
 
-	string name = 1;
+	string name = 1;	//`new Exercise { Name = "Bicep Curl"};`
 	
 	ExerciseType type = 2;
 
 	repeated Set set = 3;
-
-	message Type {
-		string name = 1;	//todo: resolve my displeasure at having to type in C# redundantly name & type: `new Exercise.Type{ Name = "Bicep Curl"};`
-	}
 
 	string note = 10;
 

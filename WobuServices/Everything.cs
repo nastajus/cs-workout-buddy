@@ -28,35 +28,34 @@ namespace Wobu.Everything {
             "cm90b2J1Zi9lbXB0eS5wcm90bxofZ29vZ2xlL3Byb3RvYnVmL3RpbWVzdGFt",
             "cC5wcm90byJbCgdXb3Jrb3V0EiIKA3dobxgBIAEoCzIVLldvYnUuRXZlcnl0",
             "aGluZy5Vc2VyEiwKBXN0YXRlGAIgASgOMh0uV29idS5FdmVyeXRoaW5nLldv",
-            "cmtvdXRTdGF0ZSKMAQoIRXhlcmNpc2USDAoEbmFtZRgBIAEoCRIrCgR0eXBl",
-            "GAIgASgOMh0uV29idS5FdmVyeXRoaW5nLkV4ZXJjaXNlVHlwZRIhCgNzZXQY",
-            "AyADKAsyFC5Xb2J1LkV2ZXJ5dGhpbmcuU2V0EgwKBG5vdGUYCiABKAkaFAoE",
-            "VHlwZRIMCgRuYW1lGAEgASgJIkAKEVJlcGVhdGVkRXhlcmNpc2VzEisKCGV4",
-            "ZXJjaXNlGAEgAygLMhkuV29idS5FdmVyeXRoaW5nLkV4ZXJjaXNlIigKA1Nl",
-            "dBIhCgNyZXAYASADKAsyFC5Xb2J1LkV2ZXJ5dGhpbmcuUmVwIlQKA1JlcBIO",
-            "CgZhbW91bnQYASABKAUSDgoGd2VpZ2h0GAIgASgFEi0KBXVuaXRzGAMgASgO",
-            "Mh4uV29idS5FdmVyeXRoaW5nLlVuaXRzTWFzc1R5cGUiGAoEVXNlchIQCgh1",
-            "c2VybmFtZRgBIAEoCSowCgxXb3Jrb3V0U3RhdGUSCQoFU1RBUlQQABIICgRT",
-            "VE9QEAESCwoHUkVTVEFSVBACKjUKDEV4ZXJjaXNlVHlwZRIMCghTVFJFTkdU",
-            "SBAAEgoKBkNBUkRJTxABEgsKB1NUUkVUQ0gQAio/Cg1Vbml0c01hc3NUeXBl",
-            "EgcKA0xCUxAAEgoKBlBPVU5EUxAAEgYKAktHEAESDQoJS0lMT0dSQU1TEAEa",
-            "AhABMugDCgpFdmVyeXRoaW5nElUKD0dldEV4ZWNpc2VzT2ZfUhIeLldvYnUu",
-            "RXZlcnl0aGluZy5FeGVyY2lzZS5UeXBlGiIuV29idS5FdmVyeXRoaW5nLlJl",
-            "cGVhdGVkRXhlcmNpc2VzEk4KD0dldEV4ZWNpc2VzT2ZfUxIeLldvYnUuRXZl",
-            "cnl0aGluZy5FeGVyY2lzZS5UeXBlGhkuV29idS5FdmVyeXRoaW5nLkV4ZXJj",
-            "aXNlMAESQAoMU3RhcnRXb3Jrb3V0EhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5",
-            "GhguV29idS5FdmVyeXRoaW5nLldvcmtvdXQSPwoLU3RvcFdvcmtvdXQSFi5n",
-            "b29nbGUucHJvdG9idWYuRW1wdHkaGC5Xb2J1LkV2ZXJ5dGhpbmcuV29ya291",
-            "dBJaChhHZXRFeGVyY2lzZUhpc3RvcnlSZWNlbnQSGi5nb29nbGUucHJvdG9i",
-            "dWYuVGltZXN0YW1wGiIuV29idS5FdmVyeXRoaW5nLlJlcGVhdGVkRXhlcmNp",
-            "c2VzElQKFUdldEV4ZXJjaXNlSGlzdG9yeUFsbBIeLldvYnUuRXZlcnl0aGlu",
-            "Zy5FeGVyY2lzZS5UeXBlGhkuV29idS5FdmVyeXRoaW5nLkV4ZXJjaXNlMAFi",
-            "BnByb3RvMw=="));
+            "cmtvdXRTdGF0ZSJ2CghFeGVyY2lzZRIMCgRuYW1lGAEgASgJEisKBHR5cGUY",
+            "AiABKA4yHS5Xb2J1LkV2ZXJ5dGhpbmcuRXhlcmNpc2VUeXBlEiEKA3NldBgD",
+            "IAMoCzIULldvYnUuRXZlcnl0aGluZy5TZXQSDAoEbm90ZRgKIAEoCSJAChFS",
+            "ZXBlYXRlZEV4ZXJjaXNlcxIrCghleGVyY2lzZRgBIAMoCzIZLldvYnUuRXZl",
+            "cnl0aGluZy5FeGVyY2lzZSIoCgNTZXQSIQoDcmVwGAEgAygLMhQuV29idS5F",
+            "dmVyeXRoaW5nLlJlcCJUCgNSZXASDgoGYW1vdW50GAEgASgFEg4KBndlaWdo",
+            "dBgCIAEoBRItCgV1bml0cxgDIAEoDjIeLldvYnUuRXZlcnl0aGluZy5Vbml0",
+            "c01hc3NUeXBlIhgKBFVzZXISEAoIdXNlcm5hbWUYASABKAkqMAoMV29ya291",
+            "dFN0YXRlEgkKBVNUQVJUEAASCAoEU1RPUBABEgsKB1JFU1RBUlQQAio1CgxF",
+            "eGVyY2lzZVR5cGUSDAoIU1RSRU5HVEgQABIKCgZDQVJESU8QARILCgdTVFJF",
+            "VENIEAIqPwoNVW5pdHNNYXNzVHlwZRIHCgNMQlMQABIKCgZQT1VORFMQABIG",
+            "CgJLRxABEg0KCUtJTE9HUkFNUxABGgIQATLbAwoKRXZlcnl0aGluZxJRChBH",
+            "ZXRFeGVyY2lzZXNPZl9SEhkuV29idS5FdmVyeXRoaW5nLkV4ZXJjaXNlGiIu",
+            "V29idS5FdmVyeXRoaW5nLlJlcGVhdGVkRXhlcmNpc2VzEkoKEEdldEV4ZXJj",
+            "aXNlc09mX1MSGS5Xb2J1LkV2ZXJ5dGhpbmcuRXhlcmNpc2UaGS5Xb2J1LkV2",
+            "ZXJ5dGhpbmcuRXhlcmNpc2UwARJACgxTdGFydFdvcmtvdXQSFi5nb29nbGUu",
+            "cHJvdG9idWYuRW1wdHkaGC5Xb2J1LkV2ZXJ5dGhpbmcuV29ya291dBI/CgtT",
+            "dG9wV29ya291dBIWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eRoYLldvYnUuRXZl",
+            "cnl0aGluZy5Xb3Jrb3V0EloKGEdldEV4ZXJjaXNlSGlzdG9yeVJlY2VudBIa",
+            "Lmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXAaIi5Xb2J1LkV2ZXJ5dGhpbmcu",
+            "UmVwZWF0ZWRFeGVyY2lzZXMSTwoVR2V0RXhlcmNpc2VIaXN0b3J5QWxsEhku",
+            "V29idS5FdmVyeXRoaW5nLkV4ZXJjaXNlGhkuV29idS5FdmVyeXRoaW5nLkV4",
+            "ZXJjaXNlMAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Wobu.Everything.WorkoutState), typeof(global::Wobu.Everything.ExerciseType), typeof(global::Wobu.Everything.UnitsMassType), }, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Wobu.Everything.Workout), global::Wobu.Everything.Workout.Parser, new[]{ "Who", "State" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Wobu.Everything.Exercise), global::Wobu.Everything.Exercise.Parser, new[]{ "Name", "Type", "Set", "Note" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Wobu.Everything.Exercise.Types.Type), global::Wobu.Everything.Exercise.Types.Type.Parser, new[]{ "Name" }, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Wobu.Everything.Exercise), global::Wobu.Everything.Exercise.Parser, new[]{ "Name", "Type", "Set", "Note" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Wobu.Everything.RepeatedExercises), global::Wobu.Everything.RepeatedExercises.Parser, new[]{ "Exercise" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Wobu.Everything.Set), global::Wobu.Everything.Set.Parser, new[]{ "Rep" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Wobu.Everything.Rep), global::Wobu.Everything.Rep.Parser, new[]{ "Amount", "Weight", "Units" }, null, null, null),
@@ -300,6 +299,9 @@ namespace Wobu.Everything {
     /// <summary>Field number for the "name" field.</summary>
     public const int NameFieldNumber = 1;
     private string name_ = "";
+    /// <summary>
+    ///`new Exercise { Name = "Bicep Curl"};`
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Name {
       get { return name_; }
@@ -462,145 +464,6 @@ namespace Wobu.Everything {
         }
       }
     }
-
-    #region Nested types
-    /// <summary>Container for nested types declared in the Exercise message type.</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static partial class Types {
-      public sealed partial class Type : pb::IMessage<Type> {
-        private static readonly pb::MessageParser<Type> _parser = new pb::MessageParser<Type>(() => new Type());
-        private pb::UnknownFieldSet _unknownFields;
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public static pb::MessageParser<Type> Parser { get { return _parser; } }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public static pbr::MessageDescriptor Descriptor {
-          get { return global::Wobu.Everything.Exercise.Descriptor.NestedTypes[0]; }
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        pbr::MessageDescriptor pb::IMessage.Descriptor {
-          get { return Descriptor; }
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public Type() {
-          OnConstruction();
-        }
-
-        partial void OnConstruction();
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public Type(Type other) : this() {
-          name_ = other.name_;
-          _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public Type Clone() {
-          return new Type(this);
-        }
-
-        /// <summary>Field number for the "name" field.</summary>
-        public const int NameFieldNumber = 1;
-        private string name_ = "";
-        /// <summary>
-        ///todo: resolve my displeasure at having to type in C# redundantly name &amp; type: `new Exercise.Type{ Name = "Bicep Curl"};`
-        /// </summary>
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public string Name {
-          get { return name_; }
-          set {
-            name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-          }
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public override bool Equals(object other) {
-          return Equals(other as Type);
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public bool Equals(Type other) {
-          if (ReferenceEquals(other, null)) {
-            return false;
-          }
-          if (ReferenceEquals(other, this)) {
-            return true;
-          }
-          if (Name != other.Name) return false;
-          return Equals(_unknownFields, other._unknownFields);
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public override int GetHashCode() {
-          int hash = 1;
-          if (Name.Length != 0) hash ^= Name.GetHashCode();
-          if (_unknownFields != null) {
-            hash ^= _unknownFields.GetHashCode();
-          }
-          return hash;
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public override string ToString() {
-          return pb::JsonFormatter.ToDiagnosticString(this);
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public void WriteTo(pb::CodedOutputStream output) {
-          if (Name.Length != 0) {
-            output.WriteRawTag(10);
-            output.WriteString(Name);
-          }
-          if (_unknownFields != null) {
-            _unknownFields.WriteTo(output);
-          }
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public int CalculateSize() {
-          int size = 0;
-          if (Name.Length != 0) {
-            size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
-          }
-          if (_unknownFields != null) {
-            size += _unknownFields.CalculateSize();
-          }
-          return size;
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public void MergeFrom(Type other) {
-          if (other == null) {
-            return;
-          }
-          if (other.Name.Length != 0) {
-            Name = other.Name;
-          }
-          _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public void MergeFrom(pb::CodedInputStream input) {
-          uint tag;
-          while ((tag = input.ReadTag()) != 0) {
-            switch(tag) {
-              default:
-                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-                break;
-              case 10: {
-                Name = input.ReadString();
-                break;
-              }
-            }
-          }
-        }
-
-      }
-
-    }
-    #endregion
 
   }
 
