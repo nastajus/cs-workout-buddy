@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Grpc.Core;
+using Wobu.Everything;
 
 namespace WobuRepl
 {
@@ -14,6 +16,7 @@ namespace WobuRepl
     {
         static void Main(string[] args)
         {
+            Everything everything = new Everything();
             Repl repl = new Repl();
             
         }
@@ -24,9 +27,6 @@ namespace WobuRepl
     /// </summary>
     class Repl
     {
-        // Static constructor to initialize the static variable.
-        // It is invoked before the first instance constructor is run.
-
         static Repl()
         {
             var exit = false;
@@ -37,6 +37,8 @@ namespace WobuRepl
 
                 //lame logic for exiting, it's a temporary placeholder example anyways. anything but "exit" crashes because can't do null.Execute();
                 exit = command.Execute();
+
+                
             }
         }
 
@@ -71,10 +73,14 @@ namespace WobuRepl
                 return default(ICommand);
             }
         }
+    }
 
-        //void Init()
-        //{
-
-        //}
+    class Everything
+    {
+        public Everything()
+        {
+            var client = new Wobu.Everything.Everything.EverythingClient(new Channel("localhost", 3000, ChannelCredentials.Insecure));
+            //client.StartWorkout()
+        }
     }
 }
