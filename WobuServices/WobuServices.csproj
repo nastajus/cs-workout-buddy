@@ -51,9 +51,10 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="proto\Everything.proto" />
+    <None Include="proto\google\protobuf\empty.proto" />
+    <None Include="proto\google\protobuf\timestamp.proto" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="proto\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
