@@ -1,10 +1,26 @@
 ﻿syntax = "proto3";
 
+import "google/protobuf/empty.proto";
 import "google/protobuf/timestamp.proto";
 
 service Everything {
 
-	rpc GetWorkouts () returns ()
+	rpc GetWorkoutsAll (.google.protobuf.Empty) returns ();	//i suppose user is already known on server...hmm... //todo: an implementation detail to choose
+
+	rpc GetWorkoutsOf (Exercise.Type) returns ()
+
+	rpc StartWorkout (); //??? 
+
+	//The repeated field approach is akin to batching, and requires all of the messages to be prepared by the server before any are sent, and the entire set of messages to be received by the client before doing any processing, increasing latency
+
+	//one was stream reply
+
+	// one was repeated reply
+
+	rpc GetHistoryRecent() returns ( );	//perhaps have default upToTime?...?
+
+	//todo: does it make sense to use the same return type as was used to call? I *think* so, but hold reserved doubts. TBD via implementing safely/sanely.
+	rpc GetHistoryAll(Exercise) returns (stream Exercise); //let this be streaming, let it keep causing scrolling		
 
 }
 
@@ -37,6 +53,10 @@ message Exercise {
 	ExerciseType type = 2;
 
 	repeated Set set = 3;
+
+	message Type {
+		string name = 1;	//todo: resolve my displeasure at having to type in C# redundantly name & type: `new Exercise.Type{ Name = "Bicep Curl"};`
+	}
 
 	string note = 10;
 
@@ -82,6 +102,7 @@ enum UnitsMassType {
 
 
 // for authentication... todo: investigate possibly replace grpc message User with superior authentication later? 
+// for buddy matching...
 message User  {
 
 	string username = 1;
