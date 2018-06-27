@@ -4,16 +4,41 @@
 
 }
 
+// a Workout session has multiple Exercises done within it. 
+// can be used to track starting time when opening app at gym arrival for example
 message Workout {
 
 	//required int32 userId
 	
-	required string name = 1;
 
-	optional string note = 2;
+
 
 }
 
+// an Exercise instance
+message Exercise {
+
+	required string name = 1;
+	
+	optional ExerciseType type = 2;
+
+	//sets
+	//reps
+
+	optional string note = 10;
+
+}
+
+enum ExerciseType {
+
+	STRENGTH = 0;
+	CARDIO = 1;
+	STRECTH = 2;
+
+}
+
+
+// for authentication... todo: investigate possibly replace grpc message User with superior authentication later? 
 message User  {
 
 	string username = 1;
