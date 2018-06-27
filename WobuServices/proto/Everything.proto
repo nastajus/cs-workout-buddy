@@ -36,13 +36,14 @@ message Exercise {
 	
 	ExerciseType type = 2;
 
-	Set set = 3;
+	repeated Set set = 3;
 
 	string note = 10;
 
 }
 
 //todo: decide a guid stategy. roughly, i want individual reps to be reconstructable in order without sets. ditto up a level of abstraction... tbd how.
+//todo: decide how to handle either A) aborted reps after 0 or 1, and B) how to handle simplist scenarios that don't require this much granular detail
 message Set {
 
 	repeated Rep rep = 1;
