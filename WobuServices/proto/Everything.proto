@@ -17,9 +17,10 @@ service Everything {
 
 	// one was repeated reply
 
-	rpc GetHistoryRecent() returns ( );	//perhaps have default upToTime?...?
+	//have default upToTime //todo: consider encoding this meaning via a message instead of a comment...
+	rpc GetHistoryRecent(.google.protobuf.Timestamp) returns (RepeatedExercises); //let this come in batches, will consume for drawing graphs of determinate size.
 
-	rpc GetHistoryAll(Exercise.Type) returns (stream Exercise); //let this be streaming, let it keep causing scrolling		
+	rpc GetHistoryAll(Exercise.Type) returns (stream Exercise); //let this be streaming, let it keep causing scrolling
 
 }
 
@@ -61,6 +62,10 @@ message Exercise {
 
 }
 
+message RepeatedExercises {
+	repeated Exercise exercise = 1;
+}
+
 //todo: decide a guid stategy. roughly, i want individual reps to be reconstructable in order without sets. ditto up a level of abstraction... tbd how.
 //todo: decide how to handle either A) aborted reps after 0 or 1, and B) how to handle simplist scenarios that don't require this much granular detail
 message Set {
@@ -85,7 +90,7 @@ enum ExerciseType {
 
 	STRENGTH = 0;
 	CARDIO = 1;
-	STRECTH = 2;
+	STRETCH = 2;
 
 }
 
