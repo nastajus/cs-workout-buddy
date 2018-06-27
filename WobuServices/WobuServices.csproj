@@ -64,6 +64,7 @@
     <None Include="protos\Everything.proto" />
     <None Include="protos\google\protobuf\empty.proto" />
     <None Include="protos\google\protobuf\timestamp.proto" />
+    <None Include="readme.md" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
