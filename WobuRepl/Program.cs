@@ -27,40 +27,45 @@ namespace WobuRepl
     /// </summary>
     class Repl
     {
+        //it just occured to using a static constructor like this is a bad idea, the constructor never finishes.. oi.
         static Repl()
         {
-            var exit = false;
-            while (!exit)
-            {
-                Console.WriteLine("enter command");
-                var command = Parser.Parse(Console.ReadLine());
+            Console.WriteLine("enter command");
 
-                exit = command.Execute();
+            while (true)
+            {
+                Console.Write(" > ");
+                var command = CommandParser.Parse(Console.ReadLine());
+
+                if (command.GetType() == typeof(ExitCommand))
+                {
+                    return;
+                }
+
+                command.Execute();
             }
         }
 
         public interface ICommand
         {
-            bool Execute();
+
+            void Execute();
         }
 
         public class ExitCommand : ICommand
         {
-            public bool Execute()
+            public void Execute()
             {
-                // exit = true... ugh.
                 Console.WriteLine("Exiting!");
-                return true;
             }
         }
 
         public class BorkedCommand : ICommand
         {
-            public bool Execute()
+            public void Execute()
             {
                 // exit = false ... uuuugghghh.
                 Console.WriteLine("Borked.");
-                return false;
             }
         }
 
@@ -69,7 +74,7 @@ namespace WobuRepl
         //    
         //}
 
-        public static class Parser
+        public static class CommandParser
         {
             public static ICommand Parse(string commandString)
             {
