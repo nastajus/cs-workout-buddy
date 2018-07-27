@@ -22,7 +22,6 @@ namespace WobuRepl
         {
             // what kind of coupling between these two would be good? 
             // i imagine some kind of decoupled thing is best.. but how ? 
-            // is this a loosely-coupled solution??? i doubt it... how about with ... events??? nah... that sounds ridiculous here... hmm...
 
             EverythingClient = new EverythingClient();
             Repl.Run( new[] {"Workout Buddy READ-EVAL-PRINT loop!", "---", "Enter command:"} );
@@ -87,7 +86,6 @@ namespace WobuRepl
                 Args = args;
             }
 
-            //it's interesting, i can inherit a member, and modify it with abstract or virtual safely. neat.
             public abstract void Execute();
         }
 
@@ -99,9 +97,7 @@ namespace WobuRepl
             {
                 foreach (string arg in Args)
                 {
-                    //register workout... 
-                    //ClientBase.StartWorkout(); //ugh
-                    Program.EverythingClient.Client.StartWorkout(new Empty()); //lol assembly error ... used reshaper's search nuget... it found 3.1... but i'd selected 3.6 already in WobuServices... hmm..
+                    Program.EverythingClient.Client.StartWorkout(new Empty()); 
                     Console.WriteLine(arg);
                 }
 
