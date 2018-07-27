@@ -75,6 +75,8 @@ namespace WobuRepl
             public abstract List<string> Args { get; set; }
             public ArgumentativeCommand(List<string> args)
             {
+                //Resharper complaint: virtual member call in constructor
+                //https://stackoverflow.com/questions/119506/virtual-member-call-in-a-constructor
                 Args = args;
             }
 
