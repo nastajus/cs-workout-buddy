@@ -16,6 +16,7 @@ namespace WobuRepl
     /// </summary>
     class Program
     {
+        //todo: rename Everything to Workout or something... recreate C# from protos... rename these files...
         public static EverythingClient Everything { get; private set; }
 
         static void Main(string[] args)
@@ -97,7 +98,8 @@ namespace WobuRepl
             {
                 foreach (string arg in Args)
                 {
-                    //Grpc.Core.RpcException: 'Status(StatusCode=Unavailable, Detail="Connect Failed")'
+                    //Grpc.Core.RpcException: 'Status(StatusCode=Unavailable, Detail="Connect Failed")' 
+                    Program.Everything.TinCanDial(StartWorkout(new Empty()));
                     Program.Everything.Client.StartWorkout(new Empty()); 
                     Console.WriteLine(arg);
                 }
@@ -140,6 +142,12 @@ namespace WobuRepl
         public EverythingClient()
         {
             Client = new Wobu.Everything.Everything.EverythingClient(new Channel("localhost", 3000, ChannelCredentials.Insecure));
+        }
+
+        //handle connection failures... in a centralized try/catch? ... or something.
+        public void TinCanDial() //task? 
+        {
+
         }
     }
 }
