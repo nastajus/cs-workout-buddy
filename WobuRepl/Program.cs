@@ -10,7 +10,7 @@ namespace WobuRepl
 {
     /// <summary>
     /// in this namespace's / project's entirety, this is only meant as a short-term testing ground, not for long-term final deployment. maximum MVP here.
-    /// todo: later replace with appropriate or easy mobile project with larger learning curve, e.g. Xamarin or Android or something.
+    /// todo: later replace with appropriate or easy mobile project with larger learning curve, e.g. Xamarin or Android or Unity or something.
     /// </summary>
     class Program
     {
@@ -30,7 +30,7 @@ namespace WobuRepl
         static Repl()
         {
             var exit = false;
-            while (exit == false)
+            while (!exit)
             {
                 Console.WriteLine("enter command");
                 var command = Parser.Parse(Console.ReadLine());
@@ -51,9 +51,26 @@ namespace WobuRepl
         {
             public bool Execute()
             {
+                // exit = true... ugh.
+                Console.WriteLine("Exiting!");
                 return true;
             }
         }
+
+        public class BorkedCommand : ICommand
+        {
+            public bool Execute()
+            {
+                // exit = false ... uuuugghghh.
+                Console.WriteLine("Borked.");
+                return false;
+            }
+        }
+
+        //public class StartWorkoutCommand : ICommand
+        //{
+        //    
+        //}
 
         public static class Parser
         {
@@ -63,11 +80,19 @@ namespace WobuRepl
                 var commandParts = commandString.Split(' ').ToList();
                 var commandName = commandParts[0];
                 var args = commandParts.Skip(1).ToList(); //the arguments is after the command
+
                 switch (commandName)
                 {
                     //Create command based on CommandName (and maybe arguments)
-                    case "exit": return new ExitCommand();
-                    //case default: 
+                    case "exit":
+                        return new ExitCommand();
+                   // case "start":
+                   //     return new StartWorkoutCommand();
+                   // case "stop":
+                   //     return new StopWorkoutCommand();
+                    //case ""
+                    default:
+                        return new BorkedCommand();
                 }
 
                 return default(ICommand);
