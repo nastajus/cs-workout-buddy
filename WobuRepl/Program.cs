@@ -16,7 +16,7 @@ namespace WobuRepl
     {
         static void Main(string[] args)
         {
-            Everything everything = new Everything();
+            EverythingClient everythingClient = new EverythingClient();
             Repl repl = new Repl();
             
         }
@@ -35,10 +35,7 @@ namespace WobuRepl
                 Console.WriteLine("enter command");
                 var command = Parser.Parse(Console.ReadLine());
 
-                //lame logic for exiting, it's a temporary placeholder example anyways. anything but "exit" crashes because can't do null.Execute();
                 exit = command.Execute();
-
-                
             }
         }
 
@@ -86,10 +83,10 @@ namespace WobuRepl
                     //Create command based on CommandName (and maybe arguments)
                     case "exit":
                         return new ExitCommand();
-                   // case "start":
-                   //     return new StartWorkoutCommand();
-                   // case "stop":
-                   //     return new StopWorkoutCommand();
+                    //case "start":
+                    //    return new StartWorkoutCommand();
+                    //case "stop":
+                    //    return new StopWorkoutCommand();
                     //case ""
                     default:
                         return new BorkedCommand();
@@ -100,9 +97,9 @@ namespace WobuRepl
         }
     }
 
-    class Everything
+    class EverythingClient
     {
-        public Everything()
+        public EverythingClient()
         {
             var client = new Wobu.Everything.Everything.EverythingClient(new Channel("localhost", 3000, ChannelCredentials.Insecure));
             //client.StartWorkout()
