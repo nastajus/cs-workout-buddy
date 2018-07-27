@@ -72,16 +72,30 @@ namespace WobuRepl
 
         abstract class ArgumentativeCommand : ICommand
         {
-            private List<string> _args;
+            public abstract List<string> Args { get; set; }
             public ArgumentativeCommand(List<string> args)
             {
-                _args = args;
+                Args = args;
             }
 
-            //hmm... how do *enforce* usage of args... o
-            public void Execute()
+            //hmm... how do *enforce* usage of args... oh... abstractify it too.
+            public virtual void Execute()
             {
                 //blah use args!
+            }
+        }
+
+        class StartWorkoutCommand : ArgumentativeCommand
+        {
+            public StartWorkoutCommand(List<string> args) : base(args)
+            {
+            }
+
+            public override List<string> Args { get; set; }
+
+            public override void Execute()
+            {
+
             }
         }
 
@@ -106,8 +120,8 @@ namespace WobuRepl
                     //so... if i want arguments... where ought I pass them? ... ... in the constructor??? 
                     case "exit":
                         return new ExitCommand();
-                    //case "start":
-                    //    return new StartWorkoutCommand();
+                    case "start":
+                        return new StartWorkoutCommand(args);
                     //case "stop":
                     //    return new StopWorkoutCommand();
                     //case ""
