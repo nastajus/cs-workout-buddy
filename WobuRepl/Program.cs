@@ -85,24 +85,18 @@ namespace WobuRepl
 
         class StartWorkoutCommand : ArgumentativeCommand
         {
-            //i suppose my constructor didn't need to have any implementation... but.. i can imagine other Args usage elsewhere...
             public StartWorkoutCommand(List<string> args) : base(args) { }
 
             public override void Execute()
             {
-                //for now just test the usage of this system... at runtime...
                 foreach (string arg in Args)
                 {
+                    //register workout... 
                     Console.WriteLine(arg);
                 }
 
             }
         }
-
-        //public class StartWorkoutCommand : ICommand
-        //{
-        //    
-        //}
 
         static class CommandParser
         {
@@ -116,8 +110,6 @@ namespace WobuRepl
                 //todo: improve ... probably a away to do this without explicitly duplicating the string in switch cases...
                 switch (commandName)
                 {
-                    //Create command based on CommandName (and maybe arguments)
-                    //so... if i want arguments... where ought I pass them? ... ... in the constructor??? 
                     case "exit":
                         return new ExitCommand();
                     case "start":
