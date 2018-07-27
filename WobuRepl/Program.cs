@@ -72,11 +72,9 @@ namespace WobuRepl
 
         abstract class ArgumentativeCommand : ICommand
         {
-            public abstract List<string> Args { get; set; }
+            public List<string> Args { get; private set; }
             public ArgumentativeCommand(List<string> args)
             {
-                //Resharper complaint: virtual member call in constructor
-                //https://stackoverflow.com/questions/119506/virtual-member-call-in-a-constructor
                 Args = args;
             }
 
@@ -92,8 +90,6 @@ namespace WobuRepl
             public StartWorkoutCommand(List<string> args) : base(args)
             {
             }
-
-            public override List<string> Args { get; set; }
 
             public override void Execute()
             {
