@@ -22,6 +22,7 @@ namespace WobuRepl
         {
             // what kind of coupling between these two would be good? 
             // i imagine some kind of decoupled thing is best.. but how ? 
+            // is this a loosely-coupled solution??? i doubt it... how about with ... events??? nah... that sounds ridiculous here... hmm...
 
             EverythingClient = new EverythingClient();
             Repl.Run( new[] {"Workout Buddy READ-EVAL-PRINT loop!", "---", "Enter command:"} );
