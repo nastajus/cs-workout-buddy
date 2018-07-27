@@ -97,6 +97,7 @@ namespace WobuRepl
             {
                 foreach (string arg in Args)
                 {
+                    //Grpc.Core.RpcException: 'Status(StatusCode=Unavailable, Detail="Connect Failed")'
                     Program.Everything.Client.StartWorkout(new Empty()); 
                     Console.WriteLine(arg);
                 }
