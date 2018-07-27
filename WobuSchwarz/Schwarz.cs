@@ -15,13 +15,21 @@ namespace WobuSchwarz
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("starting serverEv...");
+            //https://grpc.io/docs/tutorials/basic/csharp.html
+            
+            //Grpc.Core.Server
+            Server server = new Server { Ports = { new ServerPort("localhost", 3000, ServerCredentials.Insecure) }};
+            server.Start();
+            Console.ReadKey();
+            server.ShutdownAsync().Wait();
+            Console.WriteLine("did it end?");
         }
     }
 
-    class Server : Everything.EverythingBase
+    class ServerEv : Everything.EverythingBase
     {
-        public Server()
+        public ServerEv()
         {
             
         }
