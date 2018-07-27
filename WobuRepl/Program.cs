@@ -72,15 +72,14 @@ namespace WobuRepl
 
         abstract class ArgumentativeCommand : ICommand
         {
-            public List<string> Args { get; private set; }
+            public List<string> Args { get; } //auto-property can be made get only!! whhat
 
-            //what!! ... woah...
             protected ArgumentativeCommand(List<string> args)
             {
                 Args = args;
             }
 
-            //hmm... how do *enforce* usage of args... oh... abstractify it too.
+            //hmm... how do *enforce* usage of args... oh... abstractify it too... well actually... i just need them STORED??? ... i want to enforce GET usage...
             public virtual void Execute()
             {
                 //blah use args!
