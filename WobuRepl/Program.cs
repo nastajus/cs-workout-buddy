@@ -95,6 +95,11 @@ namespace WobuRepl
 
             public override void Execute()
             {
+                //for now just test the usage of this system... at runtime...
+                foreach (string arg in Args)
+                {
+                    Console.WriteLine(arg);
+                }
 
             }
         }
