@@ -100,7 +100,7 @@ namespace WobuRepl
                 {
                     //Grpc.Core.RpcException: 'Status(StatusCode=Unavailable, Detail="Connect Failed")' 
                     //Program.Everything.TinCanDial(Program.Everything.Client.StartWorkout(new Empty()));
-                    var yo = Program.Everything.TinCanDialStartWorkout();
+                    var yo = Program.Everything.TinCanDialStartWorkout(Program.Everything.Client.StartWorkout(new Empty()));
                     Console.WriteLine(yo);
                 }
 
@@ -150,11 +150,12 @@ namespace WobuRepl
         //    return  Client.funfStartMethod(); //well...
         //}
 
-        public Workout TinCanDialStartWorkout()
+        public Workout TinCanDialStartWorkout(Func<Empty, Workout> method)
         {
             try
             {
-                return Client.StartWorkout(new Empty());
+                return method.Invoke(new Empty()); //method.Method.ReturnParameter.Member
+                //return Client.StartWorkout(new Empty());
             }
             catch (Grpc.Core.RpcException)
             {
