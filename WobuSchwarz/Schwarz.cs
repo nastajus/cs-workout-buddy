@@ -28,8 +28,18 @@ namespace WobuSchwarz
 
         public override Task<Workout> StartWorkout(Empty empty, Grpc.Core.ServerCallContext context)
         {
-            return Task.FromResult(new Workout {Who = new User{ Username = "Nastajus" } } );
+            return Task.FromResult(new Workout { Who = new User{ Username = "Nastajus" }, State = WorkoutState.Start } );
         }
+
+        //hmm... how to track name... 
+
+        //public override Task<Workout> StopWorkout(Empty empty, Grpc.Core.ServerCallContext context)
+        //{
+        //    return Task.FromResult(new Workout { Who = new User
+        //    {
+        //        //Username = "Nastajus"
+        //    }, State = WorkoutState.Stop });
+        //}
 
         public override async Task GetExercisesOf_S(Exercise exercise, IServerStreamWriter<Exercise> responseStream, ServerCallContext context)
         {
