@@ -96,12 +96,12 @@ namespace WobuRepl
 
             public override void Execute()
             {
-                foreach (string arg in Args)
+                //foreach (string arg in Args)
                 {
                     //Grpc.Core.RpcException: 'Status(StatusCode=Unavailable, Detail="Connect Failed")' 
-                    Program.Everything.TinCanDial(Program.Everything.Client.StartWorkout(new Empty()));
-                    Program.Everything.Client.StartWorkout(new Empty()); 
-                    Console.WriteLine(arg);
+                    //Program.Everything.TinCanDial(Program.Everything.Client.StartWorkout(new Empty()));
+                    var yo = Program.Everything.TinCanDialStartWorkout();
+                    Console.WriteLine(yo);
                 }
 
             }
@@ -145,9 +145,22 @@ namespace WobuRepl
         }
 
         //handle connection failures... in a centralized try/catch? ... or something.
-        public Workout TinCanDial(Func<Empty, Workout> funcStartWorkout) //task? 
+        //public Workout TinCanDial(Func<Empty, Workout> funcStartWorkout) //task? 
+        //{
+        //    return  Client.funfStartMethod(); //well...
+        //}
+
+        public Workout TinCanDialStartWorkout()
         {
-            return  Client.funfStartMethod(); //well...
+            try
+            {
+                return Client.StartWorkout(new Empty());
+            }
+            catch (Grpc.Core.RpcException)
+            {
+                Console.WriteLine("dead inside...");
+                return null;
+            }
         }
     }
 }
