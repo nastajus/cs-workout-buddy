@@ -85,9 +85,8 @@ namespace WobuRepl
 
         class StartWorkoutCommand : ArgumentativeCommand
         {
-            public StartWorkoutCommand(List<string> args) : base(args)
-            {
-            }
+            //i suppose my constructor didn't need to have any implementation... but.. i can imagine other Args usage elsewhere...
+            public StartWorkoutCommand(List<string> args) : base(args) { }
 
             public override void Execute()
             {
