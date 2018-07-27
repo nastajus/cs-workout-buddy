@@ -73,7 +73,9 @@ namespace WobuRepl
         abstract class ArgumentativeCommand : ICommand
         {
             public List<string> Args { get; private set; }
-            public ArgumentativeCommand(List<string> args)
+
+            //what!! ... woah...
+            protected ArgumentativeCommand(List<string> args)
             {
                 Args = args;
             }
