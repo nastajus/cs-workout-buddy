@@ -54,12 +54,6 @@ namespace WobuRepl
             void Execute();
         }
 
-        //enforcing two competing interfaces ... is a bad idea... i can't make the CP.Parser return two kinds... must be one.
-        interface IArguCommand
-        {
-            List<String> Args { get; }
-        }
-
         class ExitCommand : ICommand
         {
             public void Execute()
@@ -76,18 +70,18 @@ namespace WobuRepl
             }
         }
 
-        class ArgumentativeCommand : ICommand
+        abstract class ArgumentativeCommand : ICommand
         {
-            private List<string> args;
+            private List<string> _args;
             public ArgumentativeCommand(List<string> args)
             {
-                this.args = args;
+                _args = args;
             }
 
+            //hmm... how do *enforce* usage of args... o
             public void Execute()
             {
                 //blah use args!
-                
             }
         }
 
