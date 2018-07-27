@@ -17,7 +17,7 @@ namespace WobuRepl
         static void Main(string[] args)
         {
             EverythingClient everythingClient = new EverythingClient();
-            Repl repl = new Repl();
+            Repl.Run( new[] {"Workout Buddy READ-EVAL-PRINT loop!", "---", "Enter command:"} );
             
         }
     }
@@ -25,12 +25,15 @@ namespace WobuRepl
     /// <summary>
     /// Read–eval–print loop
     /// </summary>
-    class Repl
+    static class Repl
     {
         //it just occured to using a static constructor like this is a bad idea, the constructor never finishes.. oi.
-        static Repl()
+        public static void Run(string[] initLines)
         {
-            Console.WriteLine("enter command");
+            foreach (var line in initLines)
+            {
+                Console.WriteLine(line);
+            }
 
             while (true)
             {
@@ -46,13 +49,13 @@ namespace WobuRepl
             }
         }
 
-        public interface ICommand
+        interface ICommand
         {
 
             void Execute();
         }
 
-        public class ExitCommand : ICommand
+        class ExitCommand : ICommand
         {
             public void Execute()
             {
@@ -60,12 +63,26 @@ namespace WobuRepl
             }
         }
 
-        public class BorkedCommand : ICommand
+        class BorkedCommand : ICommand
         {
             public void Execute()
             {
-                // exit = false ... uuuugghghh.
                 Console.WriteLine("Borked.");
+            }
+        }
+
+        class ArgumentativeCommand : ICommand
+        {
+            private List<string> args;
+            public ArgumentativeCommand(List<string> args)
+            {
+                this.args = args;
+            }
+
+            public void Execute()
+            {
+                //blah use args!
+                
             }
         }
 
@@ -74,7 +91,7 @@ namespace WobuRepl
         //    
         //}
 
-        public static class CommandParser
+        static class CommandParser
         {
             public static ICommand Parse(string commandString)
             {
@@ -83,9 +100,11 @@ namespace WobuRepl
                 var commandName = commandParts[0];
                 var args = commandParts.Skip(1).ToList(); //the arguments is after the command
 
+                //todo: improve ... probably a away to do this without explicitly duplicating the string in switch cases...
                 switch (commandName)
                 {
                     //Create command based on CommandName (and maybe arguments)
+                    //so... if i want arguments... where ought I pass them? ... ... in the constructor??? 
                     case "exit":
                         return new ExitCommand();
                     //case "start":
