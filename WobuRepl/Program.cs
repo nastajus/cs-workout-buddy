@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Grpc.Core;
 using Wobu.Everything;
+using Google.Protobuf;
+using Google.Protobuf.WellKnownTypes;
 
 namespace WobuRepl
 {
@@ -14,9 +16,14 @@ namespace WobuRepl
     /// </summary>
     class Program
     {
+        public static EverythingClient EverythingClient { get; private set; }
+
         static void Main(string[] args)
         {
-            EverythingClient everythingClient = new EverythingClient();
+            // what kind of coupling between these two would be good? 
+            // i imagine some kind of decoupled thing is best.. but how ? 
+
+            EverythingClient = new EverythingClient();
             Repl.Run( new[] {"Workout Buddy READ-EVAL-PRINT loop!", "---", "Enter command:"} );
             
         }
@@ -92,6 +99,8 @@ namespace WobuRepl
                 foreach (string arg in Args)
                 {
                     //register workout... 
+                    //ClientBase.StartWorkout(); //ugh
+                    Program.EverythingClient.Client.StartWorkout(new Empty()); //lol assembly error ... used reshaper's search nuget... it found 3.1... but i'd selected 3.6 already in WobuServices... hmm..
                     Console.WriteLine(arg);
                 }
 
@@ -128,10 +137,11 @@ namespace WobuRepl
 
     class EverythingClient
     {
+        public Everything.EverythingClient Client { get; private set; }
+
         public EverythingClient()
         {
-            var client = new Wobu.Everything.Everything.EverythingClient(new Channel("localhost", 3000, ChannelCredentials.Insecure));
-            //client.StartWorkout()
+            Client = new Wobu.Everything.Everything.EverythingClient(new Channel("localhost", 3000, ChannelCredentials.Insecure));
         }
     }
 }
