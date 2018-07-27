@@ -51,8 +51,13 @@ namespace WobuRepl
 
         interface ICommand
         {
-
             void Execute();
+        }
+
+        //enforcing two competing interfaces ... is a bad idea... i can't make the CP.Parser return two kinds... must be one.
+        interface IArguCommand
+        {
+            List<String> Args { get; }
         }
 
         class ExitCommand : ICommand
