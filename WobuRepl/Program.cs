@@ -16,14 +16,14 @@ namespace WobuRepl
     /// </summary>
     class Program
     {
-        public static EverythingClient EverythingClient { get; private set; }
+        public static EverythingClient Everything { get; private set; }
 
         static void Main(string[] args)
         {
             // what kind of coupling between these two would be good? 
             // i imagine some kind of decoupled thing is best.. but how ? 
 
-            EverythingClient = new EverythingClient();
+            Everything = new EverythingClient();
             Repl.Run( new[] {"Workout Buddy READ-EVAL-PRINT loop!", "---", "Enter command:"} );
             
         }
@@ -97,7 +97,7 @@ namespace WobuRepl
             {
                 foreach (string arg in Args)
                 {
-                    Program.EverythingClient.Client.StartWorkout(new Empty()); 
+                    Program.Everything.Client.StartWorkout(new Empty()); 
                     Console.WriteLine(arg);
                 }
 
