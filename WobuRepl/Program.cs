@@ -145,9 +145,9 @@ namespace WobuRepl
         }
 
         //handle connection failures... in a centralized try/catch? ... or something.
-        public void TinCanDial() //task? 
+        public void TinCanDial(Func<Empty, Workout> funcStartWorkout) //task? 
         {
-
+            Client.funfStartMethod(); //well...
         }
     }
 }
